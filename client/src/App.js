@@ -8,7 +8,7 @@ import { selectCurrentUser } from './redux/user/user.selector';
 import { createStructuredSelector } from 'reselect';
 import { selectCollectionsForPreview } from './redux/shop/shop.selectors';
 import { checkUserSession } from './redux/user/user.actions';
-import './App.css';
+import { GlobalStyle } from './global.styles';
 
 const HomePage = lazy(() => import('./pages/homepage/homepage.component'));
 const ShopPage = lazy(() => import('./pages/shop/shop.component'));
@@ -23,6 +23,7 @@ const App = ({ checkUserSession, currentUser }) => {
 
     return (
         <div>
+            <GlobalStyle /> 
             <Header />
             <Switch>
                 <ErrorBoundary>
